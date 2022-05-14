@@ -1,0 +1,15 @@
+add 1 2
+add 3 6
+add 4 6
+len
+add 1 2
+print
+sort
+rm 1 2
+print
+rma
+print
+len
+add 2 -4
+print
+exit

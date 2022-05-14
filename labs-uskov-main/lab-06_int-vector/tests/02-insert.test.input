@@ -1,0 +1,14 @@
+resize 5
+info
+set 3 -1
+insert 0 7
+info
+insert 6 5
+info
+insert 2 -2
+insert 6 5
+info
+push_back 7
+push_back 8
+info
+exit

@@ -1,0 +1,16 @@
+push_back 1
+push_back 2
+push_back 0
+push_back -1
+info
+resize 8
+info
+reserve 5
+info
+reserve 10
+info
+push_back 9
+push_back 10
+push_back 12
+info
+exit

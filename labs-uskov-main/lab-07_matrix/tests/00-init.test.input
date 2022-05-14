@@ -1,0 +1,4 @@
+init a 3 6
+# a
+print a
+exit

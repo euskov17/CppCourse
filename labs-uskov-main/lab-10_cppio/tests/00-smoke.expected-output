@@ -1,0 +1,35 @@
+1. Sales Manager
+Name: Joe
+Base Salary: 100
+Sold items: 20
+Item price: 300
+2. Developer
+Name: Billy
+Base Salary: 1000
+Has bonus: +
+== Total salary: 2160
+
+1. Sales Manager
+Name: Joe
+Base Salary: 100
+Sold items: 20
+Item price: 300
+2. Developer
+Name: Billy
+Base Salary: 1000
+Has bonus: +
+3. Developer
+Name: Bobby
+Base Salary: 500
+Has bonus: -
+4. Sales Manager
+Name: Joe
+Base Salary: 100
+Sold items: 20
+Item price: 300
+5. Developer
+Name: Billy
+Base Salary: 1000
+Has bonus: +
+== Total salary: 4820
+

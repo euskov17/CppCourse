@@ -1,0 +1,27 @@
+#!/bin/bash
+set -o errexit -o pipefail -o nounset
+
+TMP_DIR="/tmp/ci_$CI_JOB_ID"
+LABS_DIR="$TMP_DIR/labs"
+
+LOCAL_HEAD="$(git -C .           log --format='format:%H' -n 1 -- "$@")"
+REMOT_HEAD="$(git -C "$LABS_DIR" log --format='format:%H' -n 1 -- "$@")"
+
+if [[ $LOCAL_HEAD != $REMOT_HEAD ]] ; then
+	echo 'Ваш репозиторий не содержит всех изменений в файлах тестов или содержит лишние.' >&2
+	echo 'Проверялись пути:' "$@" >&2
+	echo "В репозиториями с условиями последний коммит, изменявший их: '$REMOT_HEAD'" >&2
+	echo "В вашем репозиториии последний коммит, изменявший их:        '$LOCAL_HEAD'" >&2
+
+	if [[ -n $LOCAL_HEAD ]] && git merge-base --is-ancestor "$REMOT_HEAD" "$LOCAL_HEAD"; then
+		echo >&2
+		echo "Коммит из удалённого репозитория встречается в истории ветки." >&2
+		echo "Это означает, что вы (скорее всего, нечайно) закоммитили изменения в этих файлах" >&2
+		echo "когда начали делать это задание." >&2
+	fi
+
+	echo >&2
+	echo "Обратитесь к преподавателю за помощью, если не понятно что с этим делать." >&2
+
+	exit 1
+fi

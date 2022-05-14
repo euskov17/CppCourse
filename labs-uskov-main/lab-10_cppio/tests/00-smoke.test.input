@@ -1,0 +1,9 @@
+add 2 Joe 100 20 300
+add 1 Billy 1000 1
+list
+save TMP_FILE
+add 1 Bobby 500 0
+load TMP_FILE
+list
+save OUTPUT_FILE
+exit

@@ -1,0 +1,14 @@
+init a 2 4
+init b 6 5
+set a 0 2 4
+= b a
+set a 1 1 1
+
+cp_init c a
+set a 0 0 5
+
+print a
+print b
+print c
+
+exit
